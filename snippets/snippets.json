@@ -1,0 +1,281 @@
+{
+	"define module": {
+		"prefix": "define",
+		"body": [
+			"define([",
+			"\t'require',",
+			"\t'${1:dependency}'",
+			"], function(require, ${2:factory}) {",
+			"\t'use strict';",
+			"\t$0",
+			"});"
+		],
+		"description": "define module"
+	},
+	"For Loop": {
+		"prefix": "for",
+		"body": [
+			"for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+			"\tconst ${3:element} = ${2:array}[${1:index}];",
+			"\t$0",
+			"}"
+		],
+		"description": "For Loop"
+	},
+	"For-Each Loop": {
+		"prefix": "foreach",
+		"body": [
+			"${1:array}.forEach(${2:element} => {",
+			"\t$0",
+			"});"
+		],
+		"description": "For-Each Loop"
+	},
+	"For-In Loop": {
+		"prefix": "forin",
+		"body": [
+			"for (const ${1:key} in ${2:object}) {",
+			"\tif (${2:object}.hasOwnProperty(${1:key})) {",
+			"\t\tconst ${3:element} = ${2:object}[${1:key}];",
+			"\t\t$0",
+			"\t}",
+			"}"
+		],
+		"description": "For-In Loop"
+	},
+	"For-Of Loop": {
+		"prefix": "forof",
+		"body": [
+			"for (const ${1:iterator} of ${2:object}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "For-Of Loop"
+	},
+	"Function Statement": {
+		"prefix": "function",
+		"body": [
+			"function ${1:name}(${2:params}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Function Statement"
+	},
+	"Function Statement for ES6": {
+		"prefix": "function6",
+		"body": [
+			"{${1:params}}=>{",
+				"\t$0",
+			"}"
+		],
+		"description": "Function Statement for ES6 ()=>{}"
+	},
+	"If Statement": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "If Statement"
+	},
+	"If-Else Statement": {
+		"prefix": "ifelse",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$0",
+			"} else {",
+			"\t",
+			"}"
+		],
+		"description": "If-Else Statement"
+	},
+	"New Statement": {
+		"prefix": "new",
+		"body": [
+			"const ${1:name} = new ${2:type}(${3:arguments});$0"
+		],
+		"description": "New Statement"
+	},
+	"Switch Statement": {
+		"prefix": "switch",
+		"body": [
+			"switch (${1:key}) {",
+			"\tcase ${2:value}:",
+			"\t\t$0",
+			"\t\tbreak;",
+			"",
+			"\tdefault:",
+			"\t\tbreak;",
+			"}"
+		],
+		"description": "Switch Statement"
+	},
+	"While Statement": {
+		"prefix": "while",
+		"body": [
+			"while (${1:condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "While Statement"
+	},
+	"Do-While Statement": {
+		"prefix": "dowhile",
+		"body": [
+			"do {",
+			"\t$0",
+			"} while (${1:condition});"
+		],
+		"description": "Do-While Statement"
+	},
+	"Try-Catch Statement": {
+		"prefix": "trycatch",
+		"body": [
+			"try {",
+			"\t$0",
+			"} catch (${1:error}) {",
+			"\t",
+			"}"
+		],
+		"description": "Try-Catch Statement"
+	},
+	"Set Timeout Function": {
+		"prefix": "settimeout",
+		"body": [
+			"setTimeout(() => {",
+			"\t$0",
+			"}, ${1:timeout});"
+		],
+		"description": "Set Timeout Function"
+	},
+	"Import external module.": {
+		"prefix": "import statement",
+		"body": [
+			"import { $0 } from \"${1:module}\";"
+		],
+		"description": "Import external module."
+	},
+	"Region Start": {
+		"prefix": "#region",
+		"body": [
+			"//#region $0"
+		],
+		"description": "Folding Region Start"
+	},
+	"Region End": {
+		"prefix": "#endregion",
+		"body": [
+			"//#endregion"
+		],
+		"description": "Folding Region End"
+	},
+	"Log to the console": {
+		"prefix": "log",
+		"body": [
+			"console.log($1);",
+			"$0"
+		],
+		"description": "Log to the console"
+	},
+	"Log warning to console": {
+		"prefix": "warn",
+		"body": [
+			"console.warn($1);",
+			"$0"
+		],
+		"description": "Log warning to the console"
+	},
+	"Log error to console": {
+		"prefix": "error",
+		"body": [
+			"console.error($1);",
+			"$0"
+		],
+		"description": "Log error to the console"
+	},
+	
+	"Import": {
+		"prefix": "import",
+		"body": [
+			"import $1 from '$0';",
+			"$0"
+		],
+		"description": "like: import oni from 'oni-cli';"
+	},
+	"Import as": {
+		"prefix": "import-as",
+		"body": [
+			"import * as $1 from '$0';",
+			"$0"
+		],
+		"description": "like: import * as oni from 'oni-cli';"
+	},
+	"Import some": {
+		"prefix": "import-some",
+		"body": [
+			"import { $1 } from '$0';",
+			"$0"
+		],
+		"description": "like: import { init } from 'oni-cli';"
+	},
+	"Import as some": {
+		"prefix": "import-as-some",
+		"body": [
+			"import { $1 as $2 } from '$0';",
+			"$0"
+		],
+		"description": "like: import { init as oni-init } from 'oni-cli';"
+	},
+	"Umi mock":{
+		"prefix": "umi-mock",
+		"body": [
+			"`${1:requestUrl}` (req, res) {",
+				"\t$0",
+				"\tres.status(200).json(${2:data})",
+			  "}"
+		],
+		"description": "umi mock"
+	},
+	"Umi model subscriptions":{
+		"prefix": "umi-subscriptions",
+		"body": [
+			"setup({ dispatch, history }) {",
+				"\treturn history.listen(({ pathname, query }) => {",
+					"\t\tif (pathname === '/') {",
+						"\t\t\t$0",
+					  "\t\t\t// 这里dispatch了一个effects要在effects中定义",
+					  "\t\t\t// dispatch({",
+					  "\t\t\t//   type: 'query'",
+					  "\t\t\t// })",
+					"\t\t}",
+				"\t});",
+			  "}"
+		],
+		"description": "umi subscriptions setup 一般用于界面监听，执行进入页面是自动请求，也可监听键盘等事件"
+	},
+	"Umi model effects":{
+		"prefix": "umi-effects",
+		"body": [
+			" *${1:effect-name}({ payload: ${2:parameter} }, { call, put, select }) {",
+				"\t//yield call(doSomethingFunc, ${2:parameter});",
+				"\t//const data = yield select(state => state.data);",
+				"\t//yield put({ type: 'fetch', payload: { page } });",
+				"\t$0",
+			  "},"
+		],
+		"description": "umi effects 异步调用的响应方法"
+	},
+	"Umi service request":{
+		"prefix": "umi-service",
+		"body": [
+			"export function ${1:name}(${2:values}) {",
+				"\treturn request('${3:requestUrl}', {",
+				  "\t\tmethod: '${4:|GET,POST,DELETE,PATCH|'",
+				  "\t\tbody: JSON.stringify(${2:values})",
+				"});",
+			  "}"
+		],
+		"description": "umi service request 服务里面的请求"
+	}
+}
