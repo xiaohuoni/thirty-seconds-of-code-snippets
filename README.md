@@ -18,3 +18,19 @@ To keep snippets to show on the top of suggestions for easy using, use this conf
 ## Snippets
 
 [30-seconds-code](https://github.com/30-seconds/30-seconds-of-code)
+
+
+## usage 
+### tc-all
+```js
+const all = (arr, fn = Boolean) => arr.every(fn);
+all([4, 2, 3], x => x > 1); // true
+all([1, 2, 3]); // true
+```
+### tc-allEqual
+```js
+const allEqual = arr => arr.every(val => val === arr[0]);
+allEqual([1, 2, 3, 4, 5, 6]); // false
+allEqual([1, 1, 1, 1]); // true
+```
+### tc-*

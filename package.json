@@ -3,7 +3,7 @@
   "displayName": "30-seconds-of-code",
   "description": "30-seconds-of-code",
   "author": "xiaohuoni",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "xiaohuoni",
   "engines": {
     "vscode": "^1.20.0"
